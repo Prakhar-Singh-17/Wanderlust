@@ -1,7 +1,8 @@
+import 'dotenv/config';
 import mongoose from "mongoose";
 import Listing from "./models/listing.js";
 
-const Mongo_url = "mongodb://127.0.0.1:27017/wanderlust";
+const Mongo_url = process.env.ATLASDB_URL;
 
 const sampleListings = [
   {
