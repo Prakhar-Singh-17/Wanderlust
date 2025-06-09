@@ -84,22 +84,12 @@ app.use((req,res,next)=>{
 });
 
 
-router.get("/", (req, res) => {
-  Listing.find()
-    .then((response) => {
-      res.render("listing/listings", { listings: response });
-    })
-    .catch((err) => {
-      res.send("Could not fetch data");
-      console.log(err);
-    });
-});
 
 app.use("/user",user);
 
 //Listings
 
-app.use("/listing",listing);
+app.use(["/", "/listing"], listing);
 
 //Reviews
 
