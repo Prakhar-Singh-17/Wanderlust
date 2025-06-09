@@ -84,11 +84,12 @@ app.use((req,res,next)=>{
 });
 
 
+
 app.use("/user",user);
 
 //Listings
 
-app.use("/listing",listing);
+app.use("/",listing);
 
 //Reviews
 
