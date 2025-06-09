@@ -364,7 +364,7 @@ mongoose
       .then(()=>{
         let updatedData = sampleListings.map((obj) => ({ 
   ...obj, 
-  owner: "68442a1a29e812ce20450c0e" 
+  owner: "68474b789001872001a769d6" 
 }));
         Listing.insertMany(updatedData)
       .then((res) => {

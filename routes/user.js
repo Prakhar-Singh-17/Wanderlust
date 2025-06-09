@@ -28,18 +28,23 @@ router.get("/login", (req, res) => {
 
 
 //Saving in res.locals since passport clears all the session variables after successful authentication of a user
-router.post(
-  "/login",
-  saveRedirectUrl,
-  passport.authenticate("local", {
-    failureRedirect: "/user/login",
-    failureFlash: true,
-  }),
-  async (req, res) => {
-    req.flash("success", "Welcome Back to Wanderlust"); 
-    res.redirect(res.locals.redirectUrl || "/listing");
+router.post("/signup", async (req, res, next) => {
+  try {
+    const { username, email, password } = req.body;
+    const user = new User({ username, email });
+    await User.register(user, password);
+    req.flash("success", `Welcome to Wanderlust ${username}`);
+
+    // Automatically log in the new user:
+    passport.authenticate("local")(req, res, () => {
+      res.redirect("/listing");
+    });
+  } catch (err) {
+    req.flash("error", err.message);
+    res.redirect("/user/signup");
   }
-);
+});
+
 
 router.get("/logout", (req, res) => {
   req.logout((err) => {
