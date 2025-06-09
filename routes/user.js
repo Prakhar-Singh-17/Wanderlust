@@ -9,25 +9,6 @@ router.get("/signup", (req, res) => {
   res.render("user/signup");
 });
 
-router.post("/signup", async (req, res) => {
-  try {
-    let { username, email, password } = req.body;
-    let user = new User({ username: username, email: email });
-    let registeredUser = await User.register(user, password);
-    req.flash("success", `Welcome to Wanderlust ${username}`);
-    res.redirect("/listing");
-  } catch (err) {
-    req.flash("error", err.message);
-    res.redirect("/user/signup");
-  }
-});
-
-router.get("/login", (req, res) => {
-  res.render("user/login");
-});
-
-
-//Saving in res.locals since passport clears all the session variables after successful authentication of a user
 router.post("/signup", async (req, res, next) => {
   try {
     const { username, email, password } = req.body;
@@ -45,6 +26,25 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
+
+router.get("/login", (req, res) => {
+  res.render("user/login");
+});
+
+
+//Saving in res.locals since passport clears all the session variables after successful authentication of a user
+router.post(
+  "/login",
+  saveRedirectUrl,
+  passport.authenticate("local", {
+    failureRedirect: "/user/login",
+    failureFlash: true,
+  }),
+  async (req, res) => {
+    req.flash("success", "Welcome Back to Wanderlust"); 
+    res.redirect(res.locals.redirectUrl || "/listing");
+  }
+);
 
 router.get("/logout", (req, res) => {
   req.logout((err) => {
