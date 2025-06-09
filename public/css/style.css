@@ -1,0 +1,210 @@
+body {
+    height: 100vh;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+.heading {
+    margin: 1rem 0;
+    text-decoration: underline;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-body {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navbar Styling */
+.navbar {
+    top: 0;
+    height: 5rem;
+    background-color: white;
+    position: sticky;
+}
+
+.fa-globe {
+    color: #E84855;
+    font-size: larger;
+}
+
+.nav-link {
+    color: black;
+    margin-right: 1rem;
+}
+
+.btn-search {
+    display: flex;
+    align-items: center;
+    background-color: #E84855;
+    color: white;
+    border-radius: 25px;
+
+}
+
+.btn-search i {
+    margin-right: 0.5rem;
+}
+
+#search {
+    border-radius: 25px;
+}
+
+/* Footer Styling */
+
+footer {
+    height: 8rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.trademark {
+    color: #E84855;
+}
+
+.socials {
+    display: flex;
+    gap: 2rem;
+}
+
+.socials i {
+    font-size: large;
+}
+
+
+.extras a {
+    text-decoration: none;
+    color: black;
+}
+
+.extras a:hover {
+    text-decoration: underline;
+}
+
+/* All Listing Styling */
+
+.filters {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    margin-right: 2rem;
+}
+
+.filter p {
+    font-size: small;
+    margin-top: 0.25rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-container a {
+    text-decoration: none;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.listing-card {
+    border: none;
+    margin: 2rem;
+}
+
+/* New Listing / Update Listing */
+
+.new-form {
+    border: 1px solid grey;
+    padding: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+}
+
+.new-form label {
+    font-weight: bold;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem
+}
+
+.add {
+    background-color: #E84855;
+    border: none;
+    width: 60%;
+}
+
+/* View Listing */
+
+.listing-container {
+    margin: 2rem auto;
+}
+
+.listing-container img {
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.edit {
+    background-color: #E84855;
+    border: none;
+}
+
+
+.edit a {
+    color: white;
+
+}
+
+.btn-container form {
+    flex: 1;
+}
+
+.btn-container button {
+    width: 100%;
+}
+
+
+/* Review-Card */
+
+.review-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 cards per row */
+    gap: 1rem;
+}
+
+.review-card {
+    padding: 0.5rem;
+    height: max-content;
+}
