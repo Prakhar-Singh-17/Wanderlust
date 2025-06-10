@@ -2,6 +2,7 @@ import { listingSchemaValidation } from "./models/schemaValidation.js";
 import { reviewSchemaValidation } from "./models/schemaValidation.js";
 import Listing from "./models/listing.js";
 import Review from "./models/review.js";
+import CustomError from "./utils/CustomError.js";
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
