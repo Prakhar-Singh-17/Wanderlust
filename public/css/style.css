@@ -96,22 +96,28 @@ footer {
 /* All Listing Styling */
 
 .filters {
-    display: flex;
-    margin-top: 2rem;
-    justify-content: center;
+  display: flex;
+  margin-top: 2rem;
+  justify-content: center;
+  /* Enable horizontal scrolling on small screens */
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
 }
 
 .filter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: max-content;
-    margin-right: 2rem;
+  display: inline-flex; /* help with wrapping in nowrap container */
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+  margin-right: 2rem;
+  flex-shrink: 0; /* Prevent shrinking so scroll works properly */
 }
 
 .filter p {
-    font-size: small;
-    margin-top: 0.25rem;
+  font-size: small;
+  margin-top: 0.25rem;
 }
 
 .card-container {
