@@ -29,7 +29,10 @@ a {
     top: 0;
     height: 5rem;
     background-color: white;
-    position: sticky;
+    position: static;
+}
+.container-fluid{
+    padding: 0;
 }
 
 .fa-globe {
